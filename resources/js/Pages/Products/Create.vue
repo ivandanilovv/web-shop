@@ -25,7 +25,7 @@
                 <label for="price" class="fw-bold fst-italic">
                     Price
                 </label><br/>
-                <input type="number" name="price" id="price" v-model="form.price" placeholder="Enter text here..."><br/>
+                <input type="number" name="price" id="price" v-model="form.price" placeholder="Enter number here..."><br/>
                 <label for="name" class="fw-bold fst-italic">
                     Description
                 </label><br/>
