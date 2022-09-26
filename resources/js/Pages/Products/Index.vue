@@ -22,6 +22,7 @@
                     <th scope="col">Product Name</th>
                     <th scope="col">Product Price</th>
                     <th scope="col">Product Description</th>
+                    <th scope="col">Product category</th>
                     <th scope="col">Edit product</th>
                     <th scope="col">Delete product</th>
                 </tr>
@@ -31,7 +32,8 @@
                     <th scope="row" class="align-middle">{{ product.id }}</th>
                     <td class="align-middle">{{ product.name }}</td>
                     <td class="align-middle">{{ product.price }}</td>
-                    <td class="align-middle" style="width: 400px">{{ product.description }}</td>
+                    <td class="align-middle w-25">{{ product.description }}</td>
+                    <td class="align-middle">{{ getCategoryName(product) }}</td>
                     <td class="align-middle">
                         <Link :href="route('products.edit', product.id)"
                               class="btn bg-warning text-white mb-2">
@@ -62,6 +64,14 @@ export default {
     props: {
         products: Array,
         categories: Array,
+    },
+    methods: {
+        getCategoryName(category) {
+            for(let i = 0; i <= this.categories.length; i++) {
+                if(category.category_id === this.categories[i].id)
+                    return this.categories[i].name;
+            }
+        }
     }
 }
 </script>
