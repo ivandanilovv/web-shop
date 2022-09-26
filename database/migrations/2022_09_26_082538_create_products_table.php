@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedInteger('price');
             $table->text('description');
-            $table->string('image');
             $table->foreignId('category_id');
             $table->timestamps();
         });

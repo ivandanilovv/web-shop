@@ -13,7 +13,7 @@
                 <label for="name" class="fw-bold fst-italic">
                     Name
                 </label><br/>
-                <input type="text" name="name" id="name" v-model="form.name" class="bg-light">
+                <input type="text" name="name" id="name" v-model="form.name" placeholder="Enter text here...">
                 <button type="submit" class="btn bg-success text-white rounded-3 ms-3">
                     Submit
                 </button>
