@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('categories', CategoryApiController::class)->only('index');
-Route::apiResource('products', ProductApiController::class)->only('index');
+Route::apiResource('categories', CategoryApiController::class)->only('index', 'show');
+Route::apiResource('products', ProductApiController::class)->only('index', 'show');

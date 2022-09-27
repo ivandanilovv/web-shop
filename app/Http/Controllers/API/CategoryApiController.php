@@ -14,4 +14,9 @@ class CategoryApiController extends Controller
         $categories = Category::query()->paginate(10);
         return JsonResource::collection($categories);
     }
+
+    public function show(Category $category): JsonResource
+    {
+        return JsonResource::make($category);
+    }
 }
