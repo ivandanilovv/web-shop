@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('price');
             $table->text('description');
             $table->foreignId('category_id');
+            $table->string('image');
             $table->timestamps();
         });
     }

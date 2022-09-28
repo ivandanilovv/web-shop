@@ -34,16 +34,30 @@ class ProductController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+
+//        $test = $request->file('image')->getMimeType();
+//        dd($test);
+
         $validated = $request->validate([
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg',
         ]);
 
-        $category = Category::query()->find($request['category_id']);
-        $category->products()->create($validated);
+        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
 
+        $request->image->move(public_path('images'), $newImageName);
+
+        $category = Category::query()->find($request['category_id']);
+        $category->products()->create([
+            'name' => $validated['name'],
+            'price' => $validated['price'],
+            'description' => $validated['description'],
+            'image' => $newImageName,
+        ]);
         return Redirect::route('products.index');
+
     }
 
     public function edit(Product $product): Response

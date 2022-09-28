@@ -15,43 +15,9 @@
                     </span>
                 </h1>
             </div>
-<!--            <table class="table table-striped table-hover table-responsive">-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!--                    <th scope="col">#</th>-->
-<!--                    <th scope="col">Product Name</th>-->
-<!--                    <th scope="col">Product Price</th>-->
-<!--                    <th scope="col">Product Description</th>-->
-<!--                    <th scope="col">Product category</th>-->
-<!--                    <th scope="col">Edit product</th>-->
-<!--                    <th scope="col">Delete product</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                <tr v-for="product in products">-->
-<!--                    <th scope="row" class="align-middle">{{ product.id }}</th>-->
-<!--                    <td class="align-middle">{{ product.name }}</td>-->
-<!--                    <td class="align-middle">{{ product.price }}</td>-->
-<!--                    <td class="align-middle w-25">{{ product.description }}</td>-->
-<!--                    <td class="align-middle">{{ getCategoryName(product) }}</td>-->
-<!--                    <td class="align-middle">-->
-<!--                        <Link :href="route('products.edit', product.id)"-->
-<!--                              class="btn bg-warning text-white mb-2">-->
-<!--                            Edit-->
-<!--                        </Link>-->
-<!--                    </td>-->
-<!--                    <td class="align-middle">-->
-<!--                        <Link :href="route('products.destroy', product.id)" method="DELETE"-->
-<!--                              class="btn bg-danger text-white mb-2">-->
-<!--                            Delete-->
-<!--                        </Link>-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
             <div class="row py-2 bg-light m-3" v-for="product in products">
                 <div class="col-6">
-                    <p class="fs-4" style="color: magenta">
+                    <p class="fs-4 text-secondary">
                         {{product.name}} / <span class="text-primary">{{getCategoryName(product)}}</span>
                     </p>
                     <p>
@@ -91,6 +57,11 @@ export default {
     props: {
         products: Array,
         categories: Array,
+    },
+    data() {
+        return {
+            test: this.products[0].image,
+        }
     },
     methods: {
         getCategoryName(category) {

@@ -32,6 +32,10 @@
                 <textarea name="description" id="description" rows="7" cols="50" placeholder="Enter text here..."
                           v-model="form.description">
                 </textarea><br/>
+                <label for="image" class="fw-bold fst-italic">
+                    Images
+                </label><br/>
+                <input type="file" name="image" id="image" @change="saveImage"><br/>
                 <div class="mt-3">
                     <button type="submit" class="btn bg-success text-white rounded-3 ms-3">
                         Submit
@@ -63,10 +67,15 @@ export default {
                 price: null,
                 description: '',
                 category_id: null,
+                image: null,
             })
         }
     },
     methods: {
+        saveImage(e) {
+            console.log(e.target.files.length)
+            this.form.image = e.target.files[0]
+        },
         submit() {
             this.$inertia.post(route('products.store'), this.form);
         }
