@@ -60,7 +60,6 @@ export default {
     },
     data() {
         return {
-            test: this.products[0].image,
         }
     },
     methods: {

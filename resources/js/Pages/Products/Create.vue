@@ -35,7 +35,7 @@
                 <label for="image" class="fw-bold fst-italic">
                     Images
                 </label><br/>
-                <input type="file" name="image" id="image" @change="saveImage"><br/>
+                <input type="file" name="image" id="image" multiple @change="saveImage"><br/>
                 <div class="mt-3">
                     <button type="submit" class="btn bg-success text-white rounded-3 ms-3">
                         Submit
@@ -73,8 +73,8 @@ export default {
     },
     methods: {
         saveImage(e) {
-            console.log(e.target.files.length)
-            this.form.image = e.target.files[0]
+            console.log(e.target.files)
+            this.form.image = e.target.files
         },
         submit() {
             this.$inertia.post(route('products.store'), this.form);
