@@ -1,35 +1,33 @@
 <template>
-    <div class="container row">
+    <div class="row container">
         <div class="col-3 p-3 bg-light">
             <custom-sidebar/>
         </div>
         <div class="col-9 pt-5">
-            <div>
-                <h1 class="fs-2 fw-bold bg-light p-4">
-                    Add new product
-                    <span>
+            <h1 class="fs-2 fw-bold bg-light p-4">
+                Add new product
+                <span>
                         <Link :href="route('products.create')"
                               class="btn bg-primary text-white ms-3 fw-bold">
                             Add
                         </Link>
                     </span>
-                </h1>
-            </div>
+            </h1>
             <div class="row py-2 bg-light m-3" v-for="product in products">
-                <div class="col-6">
+                <div class="col-12 col-xl-6">
                     <p class="fs-4 text-secondary">
-                        {{product.name}} / <span class="text-primary">{{getCategoryName(product)}}</span>
+                        {{ product.name }} / <span class="text-primary">{{ getCategoryName(product) }}</span>
                     </p>
                     <p>
-                        {{product.description}}
+                        {{ product.description }}
                     </p>
                 </div>
-                <div class="col-2 d-flex align-items-center">
+                <div class="col-3 col-xl-2 d-flex align-items-center">
                     <div class="text-primary fw-bold">
-                    {{product.price}} &euro;
+                        {{ product.price }} &euro;
                     </div>
                 </div>
-                <div class="col-4 d-flex align-items-center justify-content-end">
+                <div class="col-9 col-xl-4 d-flex align-items-center justify-content-end">
                     <div class="">
                         <Link :href="route('products.edit', product.id)"
                               class="btn bg-primary text-white me-3">
@@ -59,13 +57,12 @@ export default {
         categories: Array,
     },
     data() {
-        return {
-        }
+        return {}
     },
     methods: {
         getCategoryName(category) {
-            for(let i = 0; i <= this.categories.length; i++) {
-                if(category.category_id === this.categories[i].id)
+            for (let i = 0; i <= this.categories.length; i++) {
+                if (category.category_id === this.categories[i].id)
                     return this.categories[i].name;
             }
         }

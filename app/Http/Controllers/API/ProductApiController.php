@@ -22,7 +22,6 @@ class ProductApiController extends Controller
             });
         }
 
-
         return JsonResource::collection($filtered);
 
     }
