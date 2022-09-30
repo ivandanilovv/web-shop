@@ -32,11 +32,11 @@
                 <div class="col-4 d-flex align-items-center justify-content-end">
                     <div class="">
                         <Link :href="route('products.edit', product.id)"
-                              class="btn bg-warning text-white me-3">
+                              class="btn bg-primary text-white me-3">
                             Edit
                         </Link>
                         <Link :href="route('products.destroy', product.id)" method="DELETE"
-                              class="btn bg-danger text-white">
+                              class="btn bg-secondary text-white">
                             Delete
                         </Link>
                     </div>
