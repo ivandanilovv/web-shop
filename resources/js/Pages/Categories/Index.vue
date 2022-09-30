@@ -15,34 +15,25 @@
                     </span>
                 </h1>
             </div>
-            <table class="table table-striped table-hover table-responsive">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Category Name</th>
-                    <th scope="col">Edit category</th>
-                    <th scope="col">Delete category</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="category in categories">
-                    <th scope="row" class="align-middle">{{category.id}}</th>
-                    <td class="align-middle fs-4 text-primary">{{category.name}}</td>
-                    <td class="align-middle">
+            <div class="row py-2 bg-light m-3" v-for="category in categories">
+                <div class="col-8">
+                    <p class="fs-4 text-primary">
+                        {{category.name}}
+                    </p>
+                </div>
+                <div class="col-4 d-flex align-items-center justify-content-end">
+                    <div class="">
                         <Link :href="route('categories.edit', category.id)"
-                              class="btn bg-primary text-white mb-2">
+                              class="btn bg-primary text-white me-3">
                             Edit
                         </Link>
-                    </td>
-                    <td class="align-middle">
                         <Link :href="route('categories.destroy', category.id)" method="DELETE"
-                              class="btn bg-secondary text-white mb-2">
+                              class="btn bg-secondary text-white">
                             Delete
                         </Link>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
