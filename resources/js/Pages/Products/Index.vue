@@ -9,7 +9,7 @@
                     Add new product
                     <span>
                         <Link :href="route('products.create')"
-                              class="btn bg-success text-white ms-3 fw-bold">
+                              class="btn bg-primary text-white ms-3 fw-bold">
                             Add
                         </Link>
                     </span>
@@ -25,7 +25,7 @@
                     </p>
                 </div>
                 <div class="col-2 d-flex align-items-center">
-                    <div class="text-primary">
+                    <div class="text-primary fw-bold">
                     {{product.price}} &euro;
                     </div>
                 </div>

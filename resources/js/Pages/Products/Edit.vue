@@ -5,7 +5,7 @@
         </div>
         <div class="col-9 d-flex flex-column justify-content-center align-items-center bg-light pt-5">
             <div>
-                <p class="fs-3 fw-bold">
+                <p class="fs-3 fw-bold text-primary">
                     Edit the details for the product
                 </p>
             </div>
@@ -33,10 +33,10 @@
                           v-model="form.description">
                 </textarea><br/>
                 <div class="mt-3">
-                    <button type="submit" class="btn bg-success text-white rounded-3 ms-3">
+                    <button type="submit" class="btn bg-primary text-white rounded-3 ms-3">
                         Submit
                     </button>
-                    <a onclick="history.back();return false;" class="btn btn-danger text-white rounded-3 ms-3">
+                    <a onclick="history.back();return false;" class="btn btn-secondary text-white rounded-3 ms-3">
                         Cancel
                     </a>
                 </div>

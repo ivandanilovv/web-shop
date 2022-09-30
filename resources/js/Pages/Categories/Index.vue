@@ -9,7 +9,7 @@
                     Add new category
                     <span>
                         <Link :href="route('categories.create')"
-                              class="btn bg-success text-white ms-3 fw-bold">
+                              class="btn bg-primary text-white ms-3 fw-bold">
                             Add
                         </Link>
                     </span>
@@ -27,16 +27,16 @@
                 <tbody>
                 <tr v-for="category in categories">
                     <th scope="row" class="align-middle">{{category.id}}</th>
-                    <td class="align-middle">{{category.name}}</td>
+                    <td class="align-middle fs-4 text-primary">{{category.name}}</td>
                     <td class="align-middle">
                         <Link :href="route('categories.edit', category.id)"
-                              class="btn bg-warning text-white mb-2">
+                              class="btn bg-primary text-white mb-2">
                             Edit
                         </Link>
                     </td>
                     <td class="align-middle">
                         <Link :href="route('categories.destroy', category.id)" method="DELETE"
-                              class="btn bg-danger text-white mb-2">
+                              class="btn bg-secondary text-white mb-2">
                             Delete
                         </Link>
                     </td>
